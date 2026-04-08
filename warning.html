@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>⚠️ Phishing Warning</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+
+    <div class="shield-icon" id="shieldIcon">🛡️</div>
+
+    <div class="card" id="warningCard">
+      <div class="badge" id="riskBadge">HIGH RISK</div>
+
+      <h1>Suspicious Page Detected</h1>
+      <p class="subtitle">This page shows signs of a <strong>phishing attack</strong> targeting your login credentials.</p>
+
+      <!-- Risk meter -->
+      <div class="meter-wrap">
+        <div class="meter-label">
+          <span>Risk Score</span>
+          <span id="riskScore" class="score-num">0</span>
+        </div>
+        <div class="meter-bg">
+          <div class="meter-fill" id="meterFill"></div>
+        </div>
+      </div>
+
+      <!-- URL display -->
+      <div class="url-box">
+        <span class="url-label">Blocked URL:</span>
+        <span id="blockedUrl" class="url-text"></span>
+      </div>
+
+      <!-- Reasons list -->
+      <div class="reasons-section">
+        <p class="reasons-title">🔍 Why this was flagged:</p>
+        <ul id="reasonsList"></ul>
+      </div>
+
+      <!-- AiTM explanation -->
+      <div class="aitm-box" id="aitmBox" style="display:none">
+        <strong>⚡ AiTM Attack Pattern Detected</strong>
+        <p>This page matches <strong>Adversary-in-the-Middle (AiTM)</strong> phishing techniques used by kits like <em>Sneaky 2FA</em>. These attacks relay your login to the real Microsoft server in real time — stealing your session <em>even after you complete MFA</em>.</p>
+        <p class="aitm-note">Having MFA enabled is <strong>not enough</strong> if the attacker can relay your authentication live. Your 2FA code can be captured and reused within seconds.</p>
+      </div>
+
+      <!-- MFA guidance -->
+      <div class="mfa-box" id="mfaBox" style="display:none">
+        <strong>🔐 Why MFA didn't protect you here</strong>
+        <ul class="mfa-list">
+          <li><span class="tag tag-unsafe">Vulnerable</span> SMS one-time codes, authenticator app TOTPs, push approvals — all interceptable by AiTM proxies</li>
+          <li><span class="tag tag-safe">Safe</span> <strong>FIDO2 / Passkeys / Hardware security keys</strong> — cryptographically bound to the real site origin; a fake domain cannot relay them</li>
+        </ul>
+        <p class="mfa-note">Ask your IT team about enabling <strong>phishing-resistant MFA</strong> (e.g. Windows Hello, YubiKey, Google Passkeys).</p>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn-safe" id="btnGoBack">← Go Back (Safe)</button>
+        <button class="btn-trust" id="btnTrust">I trust this site</button>
+      </div>
+
+      <p class="small-note">If you trust this site, you can proceed — but do not enter credentials unless you are absolutely certain it is legitimate.</p>
+    </div>
+
+  </div>
+
+  <script src="warning.js"></script>
+</body>
+</html>
