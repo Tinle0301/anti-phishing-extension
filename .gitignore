@@ -14,3 +14,20 @@ build/
 
 # Node (if you add a build step later)
 node_modules/
+
+# Office documents and lock files
+*.pptx
+*.docx
+*.pdf
+~$*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+demo/.venv/

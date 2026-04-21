@@ -1,5 +1,7 @@
 # Anti-Phishing Login Detector
 
+> **Companion repo — Attack Simulator:** [Tinle0301/aitmproj](https://github.com/Tinle0301/aitmproj) — contains the AiTM proxy and target app used to demonstrate the attacks this extension defends against.
+
 A Chrome extension that detects suspicious login pages, with specific rules targeting **AiTM (Adversary-in-the-Middle) phishing kits** like **Sneaky 2FA**.
 
 ## How It Works
